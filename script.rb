@@ -14,7 +14,11 @@ loop do
     total = total.send(operators[index], 8)
   end
 
-  p indices if total == 1000
+  if total == 1000
+    print "\r"
+    indices.each { |i| print "8 #{operators[i].to_s} " }
+    print "8\t\t\n"
+  end
 
   indices[0] += 1
 
